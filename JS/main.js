@@ -131,3 +131,13 @@ async function getChuckFact() {
 }
 
 p.innerText = await getChuckFact();
+
+// Exercise 12
+
+let body = document.querySelector("body");
+let buttonChartreuse = document.createElement("button");
+buttonChartreuse.innerText = "Chartreuse Mode";
+buttonChartreuse.addEventListener("click",()=>{
+  body.style.backgroundColor = "#C3F812";
+});
+p.after(buttonChartreuse);
