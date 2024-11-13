@@ -1,4 +1,24 @@
+body {
+    height: 200vh;
+}
+
 .chart {
     color: chartreuse;
     background-color: blue;
 }
+
+.boxBar {
+    z-index: 1;
+    width: 100%;
+    border: 5px solid blueviolet;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  .bar {
+    margin-right: 10px;
+    height: 21px;
+    background: turquoise;
+    width: 0%;
+  }
