@@ -62,12 +62,15 @@ let textChange = document.querySelector(".target1");
 let button = document.querySelector("button");
 
 textInput.addEventListener("keyup",()=>{
-    textChange.innerText = textInput.value;
+    textChange.innerText = localStorage.getItem("text");
     if(textInput.value.length > 4){
         button.setAttribute("disabled","");
     } else {
         button.removeAttribute("disabled");
     }
+    localStorage.setItem("text", textInput.value);
 });
+
+
 
 
