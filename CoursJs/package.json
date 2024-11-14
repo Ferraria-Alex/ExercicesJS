@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "bootstrap": "5.3.3",
-    "easter-egg-collection": "^1.4.56"
+    "dompurify": "^3.2.0",
+    "easter-egg-collection": "^1.4.56",
+    "marked": "^15.0.0"
   }
 }

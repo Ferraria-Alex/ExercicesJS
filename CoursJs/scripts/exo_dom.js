@@ -1,3 +1,6 @@
+import { marked } from "marked";
+import DOMPurify from "dompurify";
+
 // let h1 = document.querySelector("h1");
 // /*
 // let original = h1.innerText;
@@ -57,17 +60,24 @@
 //     bar.style.width = Math.floor((currentScroll / scrollMax) * 100) + "%";
 // });
 
+
 let textInput = document.querySelector("textarea");
 let textChange = document.querySelector(".target1");
 let button = document.querySelector("button");
 
+if(localStorage.getItem("text") != ""){
+    textInput.innerText = localStorage.getItem("text");
+    textChange.innerHTML = marked(localStorage.getItem("text"));
+}
+
+if(textInput.value.length > 4){
+    button.setAttribute("disabled","");
+} else {
+    button.removeAttribute("disabled");
+}
+
 textInput.addEventListener("keyup",()=>{
-    textChange.innerText = localStorage.getItem("text");
-    if(textInput.value.length > 4){
-        button.setAttribute("disabled","");
-    } else {
-        button.removeAttribute("disabled");
-    }
+    textChange.innerHTML = DOMPurify.sanitize(marked(textInput.value)) ;
     localStorage.setItem("text", textInput.value);
 });
 
