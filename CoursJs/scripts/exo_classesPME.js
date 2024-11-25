@@ -1,13 +1,25 @@
 
 class Employee {
+
+    #fname;
+    #lname;
+    #age;
+    #monthlySalary;
+    #months = 12;
+    #rate = 90;
+    #yearSalary;
+
     constructor(fname, lname, age, monthlySalary){
-        this.fname = fname;
-        this.lname = lname;
-        this.age = age;
-        this.monthlySalary = monthlySalary;
-        this.months = 12;
-        this.rate = 90;
-        this.yearSalary = this.monthlySalary * this.months * (1+(this.rate/100));
+        this.#fname = fname;
+        this.#lname = lname;
+        this.#age = age;
+        this.#monthlySalary = monthlySalary;
+        this.#months = 12;
+        this.#rate = 90;
+        this.#yearSalary = this.#monthlySalary * this.#months * (1+(this.#rate/100));
+    }
+    getYearSalary(){
+        return this.#yearSalary;
     }
 }
 
@@ -24,7 +36,7 @@ class Pme {
         let teamCost = 0;
         console.log("---------------------MA PME---------------------");
         this.team.forEach((member) => {
-            teamCost += member.yearSalary;
+            teamCost += member.getYearSalary();
         });
         console.log(`${this.company} : Cout Initial : ${this.fees}`);
         console.log(`${this.company} : Cout Total Equipe : ${teamCost}`);
